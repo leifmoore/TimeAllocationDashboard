@@ -1,0 +1,192 @@
+:root {
+    --background-light: #f4f4f4;
+    --background-dark: #333;
+    --text-light: #000;
+    --text-dark: #fff;
+    --container-background-light: #fff;
+    --container-background-dark: #444;
+    --slider-background: #ccc;
+    --slider-checked-background: #2196F3;
+    --button-background: #007bff;
+    --button-hover-background: #0056b3;
+
+    --default-text-color: rgb(75, 188, 75); /* Green */
+    --increased-text-color: rgb(201, 62, 62); /* Red */
+    --decreased-text-color: rgb(94, 94, 246); /* Blue */
+
+    --chart-product-design: #FF6384;
+    --chart-product-development: #36A2EB;
+    --chart-project-management: #FFCE56;
+    --chart-stakeholder-communication: #4BC0C0;
+    --chart-continuous-learning: #9966FF;
+    --chart-marketing-strategy: #FF9F40;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    color: var(--text-light);
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--container-background-light);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+body.dark-mode .container {
+    background: var(--container-background-dark);
+    color: var(--text-dark);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dark-mode-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--slider-background);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--slider-checked-background);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sliders {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.slider-container {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.total {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--button-background);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-background);
+}
+
+.chart-toggle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chart-toggle button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: var(--button-background);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chart-toggle button:hover {
+    background-color: var(--button-hover-background);
+}
+
+.charts {
+    flex: 1;
+    min-width: 300px;
+}
+
+canvas {
+    margin-top: 20px;
+}

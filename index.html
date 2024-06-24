@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Allocation Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Time Allocation Dashboard</h1>
+        <div class="dark-mode-switch">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="content">
+            <div class="sliders">
+                <div class="slider-container">
+                    <label for="productDesign">Product Design Collaboration: <span id="productDesignValue">40%</span></label>
+                    <input type="range" id="productDesign" min="0" max="100" value="40">
+                </div>
+                <div class="slider-container">
+                    <label for="productDevelopment">Product Development Interface: <span id="productDevelopmentValue">15%</span></label>
+                    <input type="range" id="productDevelopment" min="0" max="100" value="15">
+                </div>
+                <div class="slider-container">
+                    <label for="projectManagement">Project Management Support: <span id="projectManagementValue">10%</span></label>
+                    <input type="range" id="projectManagement" min="0" max="100" value="10">
+                </div>
+                <div class="slider-container">
+                    <label for="stakeholderCommunication">Stakeholder Communication: <span id="stakeholderCommunicationValue">10%</span></label>
+                    <input type="range" id="stakeholderCommunication" min="0" max="100" value="10">
+                </div>
+                <div class="slider-container">
+                    <label for="continuousLearning">Continuous Learning and Improvement: <span id="continuousLearningValue">10%</span></label>
+                    <input type="range" id="continuousLearning" min="0" max="100" value="10">
+                </div>
+                <div class="slider-container">
+                    <label for="marketingStrategy">Marketing & Communications Strategy: <span id="marketingStrategyValue">15%</span></label>
+                    <input type="range" id="marketingStrategy" min="0" max="100" value="15">
+                </div>
+                <div class="total">
+                    Total: <span id="totalValue">100%</span>
+                </div>
+                <button id="resetButton">Reset to Default</button>
+            </div>
+            <div class="charts">
+                <div class="chart-toggle">
+                    <button id="pieButton">Pie Chart</button>
+                    <button id="doughnutButton">Doughnut Chart</button>
+                    <button id="barButton">Bar Chart</button>
+                </div>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
